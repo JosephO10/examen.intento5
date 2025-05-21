@@ -1,0 +1,142 @@
+ /* Reset and base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #000000;
+  }
+  /* Container Flex */
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  /* Vertical left menu - collapsed by default */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px; /* collapsed width */
+    height: 100vh;
+    background: linear-gradient(180deg, #003049);
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    box-shadow: 3px 0 6px #003049;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 10;
+  }
+  /* On hover the nav expands */
+  nav:hover {
+    width: 220px;
+  }
+  /* The links inside nav */
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem 1rem 1rem 1.25rem;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+  }
+  /* On expanded menu, show full text, on collapsed hide text */
+  nav:hover a {
+    padding-left: 2rem;
+  }
+  /* Hide text when nav is collapsed */
+  nav a span {
+    margin-left: 10px;
+    opacity: 0;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+  }
+  nav:hover a span {
+    opacity: 1;
+  }
+  /* Show an icon or bullet on collapsed nav for each link as minimal representation */
+  nav a:before {
+    content: "•";
+    color: #f9f9f9;
+    font-size: 1.4rem;
+    display: inline-block;
+    width: 1.2rem;
+    text-align: center;
+    margin-right: 0;
+    transition: margin-right 0.3s ease;
+  }
+  nav:hover a:before {
+    margin-right: 0.5rem;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color:#003049;
+  }
+  /* Main content area */
+  main {
+    margin-left: 60px; /* collapsed nav width */
+    padding: 2rem 3rem;
+    transition: margin-left 0.3s ease;
+  }
+  nav:hover ~ main {
+    margin-left: 220px; /* expanded nav width */
+  }
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #003049;
+  }
+  h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #d62828;
+    border-bottom: 3px solid #d62828;
+    padding-bottom: 0.3rem;
+  }
+  p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    max-width: 720px;
+  }
+  /* Summary boxes */
+  .summary {
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    border-left: 4px solid #b71010;
+    background: #fff6e6;
+    border-radius: 4px;
+  }
+  /* Reset some default styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #f0f2f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 180vh;
+    }
+    img {
+      display: block;
+      max-width: 60vw;
+      max-height: 60vh;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+    @media(max-width:768px){
+    form{
+      padding: 10px;
+    }
+  }
